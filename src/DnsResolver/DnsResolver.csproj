@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net11.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <LangVersion>15.0</LangVersion>
+        <RootNamespace>DnsResolver</RootNamespace>
+        <AssemblyName>DnsResolver</AssemblyName>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+        <AnalysisLevel>latest-Recommended</AnalysisLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="System.Management.Automation" Version="7.7.0-preview.5"
+            PrivateAssets="all" />
+    </ItemGroup>
+</Project>
