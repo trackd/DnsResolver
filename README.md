@@ -1,8 +1,7 @@
 ﻿# DnsResolver
 
-Cross-platform DNS lookups for PowerShell, built on the [`System.Net.DnsResolver`](https://learn.microsoft.com/en-us/dotnet/api/system.net.dnsresolver?view=net-11.0) class introduced in
-.NET 11. Works the same on Windows, Linux, and macOS, with no dependency on `nslookup`, `dig`, or the
-Windows-only `Resolve-DnsName`.
+Cross-platform DNS lookups for PowerShell, built on the new managed [`System.Net.DnsResolver`](https://learn.microsoft.com/en-us/dotnet/api/system.net.dnsresolver?view=net-11.0).  
+introduced in .NET 11, supported on Windows, Linux, and macOS
 
 ```powershell
 PS> Resolve-DnsRecord github.com, 1.1.1.1
@@ -25,13 +24,17 @@ github.com A      60 140.82.121.3
 - DNS failures such as NXDOMAIN and SERVFAIL surface as regular PowerShell errors that expose the
   response code.
 
+## Install
+
+```powershell
+Install-Module DnsResolver
+```
+
 ## Requirements
 
-- PowerShell 7.7 or later, running on .NET 11
+- PowerShell 7.7 (probably preview-5 or later), running on .NET 11 rc1
 
-## Installation
-
-The module is not yet published to the PowerShell Gallery. Build it from source:
+## Build
 
 ```powershell
 git clone <repository-url>

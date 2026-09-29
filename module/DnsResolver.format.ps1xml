@@ -35,7 +35,20 @@
               </TableColumnItem>
               <TableColumnItem>
                 <ScriptBlock>
-                  [int]$_.Ttl.TotalSeconds
+                  if ($_.Ttl.TotalDays -ge 1) {
+                      '{0:0}d{1:0}h' -f $_.Ttl.TotalDays, $_.Ttl.Hours
+                  }
+                  elseif ($_.Ttl.TotalHours -ge 1) {
+                      '{0:0}h{1:0}m' -f $_.Ttl.TotalHours, $_.Ttl.Minutes
+                  }
+                  elseif ($_.Ttl.TotalMinutes -ge 1) {
+                      # greater than 1 minute
+                      '{0:0}m' -f $_.Ttl.TotalMinutes
+                  }
+                  else {
+                      # less than 1 minute
+                      '{0:0}s' -f $_.Ttl.TotalSeconds
+                  }
                 </ScriptBlock>
               </TableColumnItem>
               <TableColumnItem>
